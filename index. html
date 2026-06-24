@@ -1,0 +1,76 @@
+            <div class="grid-container">
+                <div class="grid-item portrait">
+                    <img src="1000838918.jpg" alt="Grace Wonder smiling">
+                    <div class="overlay">
+                        <p class="caption-text">Traveling spirit, smiling heart.</p>
+                        <p class="caption-metadata">#Adventure #Travel</p>
+                    </div>
+                </div>
+
+                <div class="grid-item wide">
+                    <img src="1000836676.jpg" alt="Group at Administration Block">
+                    <div class="overlay">
+                        <p class="caption-text">A committed leader: Duke of Edinburgh international award.</p>
+                        <p class="caption-metadata">#DofE #Kenya</p>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="1000853187.jpg" alt="Pork dinner plate on a wooden table">
+                    <div class="overlay">
+                        <p class="caption-text">We prepare food together... especially pork!</p>
+                        <p class="caption-metadata">#DinnerDate</p>
+                    </div>
+                </div>
+
+                <div class="grid-item portrait">
+                    <img src="1000820831.jpg" alt="Grace holding a broom at hospital service event">
+                    <div class="overlay">
+                        <p class="caption-text">Resilient, hardworking, and always kind.</p>
+                        <p class="caption-metadata">#Service #Resilience</p>
+                    </div>
+                </div>
+
+                <div class="grid-item portrait">
+                    <video controls muted>
+                        <source src="1000853180.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="overlay">
+                        <p class="caption-text">Trying not to die laughing over delicious meals.</p>
+                        <p class="caption-metadata">#Streaks #TikTokPartner</p>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="1000836732.jpg" alt="Group standing on field">
+                    <div class="overlay">
+                        <p class="caption-text">Duke of Edinburgh commits: personal growth and service.</p>
+                        <p class="caption-metadata">#DofE #KenyaAward</p>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="1000853160.jpg" alt="Two milkshakes on a table">
+                    <div class="overlay">
+                        <p class="caption-text">Memories of sweet shared moments.</p>
+                        <p class="caption-metadata">#SharedMoments #Sweet</p>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="1000853184.jpg" alt="Silhouette standing at sunset">
+                    <div class="overlay">
+                        <p class="caption-text">Through happy moments and difficult times.</p>
+                        <p class="caption-metadata">#Depth #Strength</p>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="1000820905.jpg" alt="Group cleaning with hairnets and masks">
+                    <div class="overlay">
+                        <p class="caption-text">Always there to support and build up others.</p>
+                        <p class="caption-metadata">#Community #Kindness</p>
+                    </div>
+                </div>
+            </div>
