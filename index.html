@@ -462,3 +462,386 @@ updateCountdown();
 
 </body>
  </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Grace Wonder Olik 💙</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#3b82f6);
+color:white;
+overflow-x:hidden;
+}
+
+.hidden{
+display:none;
+}
+
+/* COUNTDOWN PAGE */
+
+#countdownPage{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:25px;
+}
+
+#countdownPage h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+#countdown{
+font-size:2rem;
+font-weight:bold;
+margin-top:25px;
+background:rgba(255,255,255,0.15);
+padding:20px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+}
+
+.intro{
+max-width:900px;
+line-height:1.8;
+font-size:1.2rem;
+}
+
+/* SURPRISE PAGE */
+
+#surprisePage{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+overflow:hidden;
+display:none;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:opacity 2s ease-in-out;
+}
+
+.slide.active{
+opacity:1;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+z-index:10;
+}
+
+.overlay h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.overlay p{
+max-width:900px;
+line-height:1.8;
+font-size:1.2rem;
+}
+
+.signature{
+margin-top:30px;
+font-size:1.5rem;
+font-weight:bold;
+}
+
+.hearts{
+position:absolute;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:5;
+pointer-events:none;
+}
+
+.heart{
+position:absolute;
+bottom:-50px;
+animation:float linear forwards;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+
+}
+
+@media(max-width:768px){
+
+#countdownPage h1{
+font-size:2rem;
+}
+
+.overlay h1{
+font-size:2rem;
+}
+
+.overlay p{
+font-size:1rem;
+}
+
+#countdown{
+font-size:1.4rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- COUNTDOWN PAGE -->
+
+<section id="countdownPage">
+
+<h1>🎉 Happy Birthday Grace Wonder Olik 💙</h1>
+
+<p class="intro">
+
+To the girl whose suitcase is always ready for adventure ✈️,
+
+whose smile brightens every room 😊,
+
+whose loyalty never wavers 💙,
+
+and whose love for pork should honestly be studied by scientists 🥓😂
+
+</p>
+
+<div id="countdown">
+Loading countdown...
+</div>
+
+</section>
+
+<!-- SURPRISE PAGE -->
+
+<section id="surprisePage">
+
+<img class="slide active" src="grace1.jpg">
+<img class="slide" src="grace2.jpg">
+<img class="slide" src="grace3.jpg">
+<img class="slide" src="grace4.jpg">
+<img class="slide" src="grace5.jpg">
+<img class="slide" src="grace6.jpg">
+<img class="slide" src="grace7.jpg">
+
+<div class="hearts" id="hearts"></div>
+
+<div class="overlay">
+
+<h1>🎂 Happy Birthday Wonder 💙</h1>
+
+<p>
+
+Dear Grace Wonder Olik,
+
+Today the world celebrates someone truly special.
+
+Someone adventurous enough to chase new horizons.
+
+Someone resilient enough to overcome every challenge.
+
+Someone hardworking enough to inspire everyone around her.
+
+Someone kind enough to always show up when needed.
+
+Since March 12th 2026, you've been one of the most important people in my life.
+
+Through every laugh, every disagreement, every conversation, every meal, and every memory, you've remained loyal, genuine and irreplaceable.
+
+You took me out to dinner at Fat Baby Hotel.
+
+You've stood beside me during difficult moments.
+
+You've encouraged me when I doubted myself.
+
+And somehow, even whenever we got mad at each other, we always found our way back.
+
+That is something truly rare.
+
+Your commitment to the Duke of Edinburgh International Award reflects the incredible person you are.
+
+A leader.
+
+A servant.
+
+A friend.
+
+An adventurer.
+
+And yes...
+
+Kenya's undisputed Pork Champion. 🥓😂
+
+May this year bring endless adventures, success, happiness, growth and unforgettable memories.
+
+May God bless every step you take.
+
+May your dreams become reality.
+
+May your smile never fade.
+
+And may our TikTok streak never break. 🔥
+
+Happy Birthday Wonder.
+
+You are appreciated more than words can ever express.
+
+💙
+
+</p>
+
+<div class="signature">
+With Love, Julius 💙
+</div>
+
+</div>
+
+<audio id="birthdayMusic" loop>
+<source src="birthday-song.mp3" type="audio/mpeg">
+</audio>
+
+</section>
+
+<script>
+
+/* COUNTDOWN */
+
+const birthday = new Date("July 2, 2026 00:00:00").getTime();
+
+const countdown = setInterval(function(){
+
+const now = new Date().getTime();
+
+const distance = birthday - now;
+
+const days = Math.floor(distance/(1000*60*60*24));
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML =
+days + " Days " +
+hours + " Hours " +
+minutes + " Minutes " +
+seconds + " Seconds";
+
+if(distance <= 0){
+
+clearInterval(countdown);
+
+document.getElementById("countdownPage").style.display="none";
+
+document.getElementById("surprisePage").style.display="block";
+
+document.getElementById("birthdayMusic").play();
+
+startSlideshow();
+
+}
+
+},1000);
+
+/* SLIDESHOW */
+
+function startSlideshow(){
+
+const slides=document.querySelectorAll(".slide");
+
+let current=0;
+
+setInterval(()=>{
+
+slides[current].classList.remove("active");
+
+current++;
+
+if(current>=slides.length){
+current=0;
+}
+
+slides[current].classList.add("active");
+
+},5000);
+
+}
+
+/* FLOATING HEARTS */
+
+const hearts=document.getElementById("hearts");
+
+setInterval(()=>{
+
+const heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="💙";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.fontSize=(20+Math.random()*40)+"px";
+
+heart.style.animationDuration=(6+Math.random()*6)+"s";
+
+hearts.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},12000);
+
+},400);
+
+</script>
+
+</body>
+ </html>
