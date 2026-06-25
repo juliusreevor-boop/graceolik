@@ -12,11 +12,11 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#081b4b,#1e3a8a,#60a5fa);
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#3b82f6);
 color:white;
 overflow-x:hidden;
 }
@@ -34,47 +34,62 @@ padding:30px;
 .hero h1{
 font-size:3rem;
 margin-bottom:20px;
+animation:fadeIn 2s ease;
 }
 
 .hero p{
-max-width:800px;
-line-height:1.8;
 font-size:1.2rem;
+max-width:850px;
+line-height:1.8;
 }
 
 .countdown{
+margin-top:25px;
 font-size:2rem;
 font-weight:bold;
-margin-top:20px;
+background:rgba(255,255,255,0.15);
+padding:15px 25px;
+border-radius:20px;
 }
 
-.button{
-display:inline-block;
+.music{
 margin-top:25px;
-padding:15px 30px;
-background:white;
-color:#1e3a8a;
-text-decoration:none;
-border-radius:50px;
-font-weight:bold;
+}
+
+audio{
+width:320px;
+max-width:90%;
 }
 
 .gallery{
 padding:50px 20px;
-text-align:center;
 }
 
-.gallery h2{
+.section-title{
+text-align:center;
+font-size:2rem;
 margin-bottom:30px;
 }
 
-.gallery img{
-width:90%;
-max-width:700px;
+.card{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
 border-radius:20px;
-margin:20px auto;
-display:block;
+overflow:hidden;
+margin:25px auto;
+max-width:900px;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.card img{
+width:100%;
+display:block;
+}
+
+.caption{
+padding:20px;
+font-size:1.1rem;
+line-height:1.8;
 }
 
 .video-section{
@@ -83,15 +98,15 @@ text-align:center;
 }
 
 video{
-width:90%;
-max-width:700px;
+width:95%;
+max-width:800px;
 border-radius:20px;
 }
 
 .message{
-max-width:900px;
+padding:60px 20px;
+max-width:1000px;
 margin:auto;
-padding:40px 20px;
 line-height:2;
 font-size:1.1rem;
 }
@@ -104,7 +119,64 @@ margin-bottom:30px;
 .footer{
 text-align:center;
 padding:60px 20px;
-font-size:1.2rem;
+}
+
+.footer h1{
+margin-top:20px;
+}
+
+.balloon{
+position:fixed;
+bottom:-100px;
+font-size:30px;
+animation:floatUp 12s linear infinite;
+opacity:0.7;
+pointer-events:none;
+}
+
+.balloon:nth-child(1){
+left:10%;
+animation-delay:0s;
+}
+
+.balloon:nth-child(2){
+left:30%;
+animation-delay:4s;
+}
+
+.balloon:nth-child(3){
+left:50%;
+animation-delay:2s;
+}
+
+.balloon:nth-child(4){
+left:70%;
+animation-delay:6s;
+}
+
+.balloon:nth-child(5){
+left:90%;
+animation-delay:8s;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(0);
+}
+100%{
+transform:translateY(-120vh);
+}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 </style>
@@ -112,42 +184,91 @@ font-size:1.2rem;
 
 <body>
 
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+
 <section class="hero">
 
-<h1>Happy Birthday Grace Wonder Olik</h1>
+<h1>
+Happy Birthday Grace Wonder Olik
+</h1>
 
 <p>
-For the girl whose suitcase is always ready for adventure,
+To the girl whose suitcase is always ready for adventure,
 whose smile brightens every room,
 whose loyalty never wavers,
-and whose love for pork deserves its own national holiday.
+and whose love for pork should honestly be studied by scientists.
 </p>
 
-<div class="countdown" id="countdown"></div>
+<div class="countdown" id="countdown">
+Loading countdown...
+</div>
 
-<a
-class="button"
-target="_blank"
-href="https://www.youtube.com/results?search_query=Why+Elevation+Worship">
+<div class="music">
+
+<h3 style="margin-bottom:10px;">
 Play Why by Elevation Worship
-</a>
+</h3>
+
+<audio id="birthdaySong" controls>
+<source src="WHY.mp3" type="audio/mpeg">
+</audio>
+
+</div>
 
 </section>
 
 <section class="gallery">
 
-<h2>Our Memories Together</h2>
+<h2 class="section-title">
+Our Beautiful Memories
+</h2>
 
-<img src="IMG-20260601-WA0039.jpg" alt="Grace">
-<img src="IMG-20260604-WA0003.jpg" alt="Grace">
-<img src="IMG-20260624-WA0007.jpg" alt="Grace">
-<img src="IMG-20260624-WA0011.jpg" alt="Grace">
+<div class="card">
+<img src="IMG-20260601-WA0039.jpg">
+<div class="caption">
+Grace and her adventurous spirit.
+Some people travel to see places.
+Grace travels to collect stories.
+</div>
+</div>
+
+<div class="card">
+<img src="IMG-20260604-WA0003.jpg">
+<div class="caption">
+A committed member of the Duke of Edinburgh International Award Kenya.
+Strong. Resilient. Purposeful.
+</div>
+</div>
+
+<div class="card">
+<img src="IMG-20260624-WA0007.jpg">
+<div class="caption">
+Public Service Announcement:
+Never stand between Grace and pork.
+Your safety cannot be guaranteed.
+</div>
+</div>
+
+<div class="card">
+<img src="IMG-20260624-WA0011.jpg">
+<div class="caption">
+Kindness is her superpower.
+Whenever life became difficult,
+she always showed up.
+</div>
+</div>
 
 </section>
 
 <section class="video-section">
 
-<h2>Special Video</h2>
+<h2 class="section-title">
+One Of My Favourite Memories
+</h2>
 
 <video controls>
 <source src="VID-20260624-WA0009.mp4" type="video/mp4">
@@ -157,65 +278,91 @@ Play Why by Elevation Worship
 
 <section class="message">
 
-<h2>A Letter To Wonder</h2>
+<h2>
+A Letter To Wonder
+</h2>
 
 <p>
 
 Happy Birthday Grace Wonder Olik.
 
-Since March 12, 2026, you have become one of the most important people in my life.
+Today is not just another day.
+It is the celebration of someone whose presence has made my life brighter, richer and more meaningful.
 
-You have been there through laughter, challenges, victories, disagreements and countless unforgettable moments.
+Since March 12th 2026,
+you have become one of the most important people in my life.
 
-Your adventurous spirit is one of the most beautiful things about you.
-You embrace life with courage, curiosity and excitement.
+You have been there through victories and setbacks,
+through laughter and disagreements,
+through moments of certainty and moments of confusion.
 
-Your love for travel reflects the amazing person you are:
-someone who constantly seeks growth, discovery and new experiences.
+Your adventurous spirit is unmatched.
+
+You embrace life with courage,
+curiosity and excitement.
+
+Your love for travelling reflects who you truly are:
+someone who refuses to stay still when there are experiences waiting to be discovered.
 
 You are resilient.
+
 You are hardworking.
+
 You are committed.
-And your dedication to the Duke of Edinburgh International Award in Kenya proves that every day.
 
-Thank you for always helping me whenever life became difficult.
+And your dedication to the Duke of Edinburgh International Award in Kenya proves that every single day.
 
-Thank you for standing beside me through every storm.
+Thank you for every conversation.
 
-Thank you for always finding me whenever we disagreed so we could talk, forgive each other and move forward.
+Thank you for every lesson.
 
-That is one of the many reasons our friendship means so much to me.
+Thank you for every laugh.
 
-I will always treasure our memories together.
+Thank you for always finding me whenever disagreements tried to separate us.
 
-From the dinner date at Fat Baby Hotel,
-to the meals we prepared together,
-to the conversations and laughter we shared.
+Somehow,
+even when we get angry,
+we always end up talking,
+forgiving,
+and choosing our friendship again.
+
+That is something truly special.
+
+One of my favourite memories will always be the dinner you treated me to at Fat Baby Hotel.
+
+It wasn't just about the food.
+
+It was about the kindness behind the gesture.
+
+I will also never forget the moments we prepared food together,
+shared meals together,
+and simply enjoyed life together.
 
 And of course,
-a birthday message for Grace would never be complete without mentioning pork.
+we cannot talk about Grace Wonder without mentioning pork.
 
-If enjoying pork were an Olympic event,
-Kenya would definitely win gold because of you.
+If there was an Olympic event for enjoying pork,
+you would bring home gold for Kenya.
 
 As my TikTok streak partner,
 my friend,
 and someone I deeply appreciate,
 
-I pray that God blesses you abundantly.
+I pray that God blesses every step you take.
 
 May your journeys be exciting.
 
 May your dreams become reality.
 
-May your favourite colour blue always remind you that the sky is only the beginning.
+May your table never lack delicious food.
 
-May your future be filled with happiness,
-purpose,
-success,
-love,
-great food,
-and unforgettable adventures.
+May your heart remain kind.
+
+May every adventure lead you closer to the life you deserve.
+
+And may your favourite colour blue always remind you that the sky is not your limit.
+
+It is only the beginning.
 
 Happy Birthday Wonder.
 
@@ -227,10 +374,25 @@ May God bless you today and always.
 
 <section class="footer">
 
-<h2>Happy Birthday Wonder</h2>
+<h2>
+To My TikTok Streak Partner
+</h2>
 
 <p>
-With appreciation, gratitude and friendship,
+May our streak never break.
+May our friendship never fade.
+And may your birthday be as amazing as you are.
+</p>
+
+<h1>
+HAPPY BIRTHDAY WONDER
+</h1>
+
+<p>
+With appreciation, gratitude and countless memories,
+
+<br><br>
+
 Julius
 </p>
 
@@ -238,35 +400,51 @@ Julius
 
 <script>
 
-const targetDate =
+const birthdayDate =
 new Date("July 2, 2026 00:00:00").getTime();
 
 function updateCountdown(){
 
 const now = new Date().getTime();
 
-const distance = targetDate - now;
+const distance = birthdayDate - now;
 
-if(distance < 0){
+if(distance <= 0){
 
 document.getElementById("countdown").innerHTML =
-"Today is your birthday!";
+"Happy Birthday Grace Wonder Olik!";
+
+const song =
+document.getElementById("birthdaySong");
+
+song.play().catch(() => {});
 
 return;
-
 }
 
 const days =
 Math.floor(distance/(1000*60*60*24));
 
 const hours =
-Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+Math.floor(
+(distance%(1000*60*60*24))
+/
+(1000*60*60)
+);
 
 const minutes =
-Math.floor((distance%(1000*60*60))/(1000*60));
+Math.floor(
+(distance%(1000*60*60))
+/
+(1000*60)
+);
 
 const seconds =
-Math.floor((distance%(1000*60))/1000);
+Math.floor(
+(distance%(1000*60))
+/
+1000
+);
 
 document.getElementById("countdown").innerHTML =
 days + " days " +
