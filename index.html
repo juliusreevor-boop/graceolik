@@ -3,136 +3,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Grace Wonder Olik ðŸ’™</title>
+
+<title>Happy Birthday Grace Wonder Olik</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Segoe UI,sans-serif;color:white;background:linear-gradient(135deg,#081028,#123a8a,#4f8cff);overflow-x:hidden}
-section{padding:60px 20px}
-.hero{text-align:center;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
-h1{font-size:3rem;margin-bottom:10px}
-.card{max-width:1000px;margin:auto;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);padding:25px;border-radius:20px}
-.slideshow{max-width:900px;margin:auto}
-.slide{display:none;width:100%;border-radius:20px}
-.count{font-size:2rem;font-weight:bold;margin:15px 0}
-.btn{display:inline-block;padding:14px 26px;background:white;color:#123a8a;text-decoration:none;border-radius:999px;font-weight:bold}
-.gallery{text-align:center}
-.float{position:fixed;font-size:28px;opacity:.7;animation:rise linear infinite}
-@keyframes rise{from{transform:translateY(110vh)}to{transform:translateY(-20vh)}}
-.type{border-right:3px solid white;white-space:nowrap;overflow:hidden}
-.center{text-align:center}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#081b4b,#1e3a8a,#60a5fa);
+color:white;
+overflow-x:hidden;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:800px;
+line-height:1.8;
+font-size:1.2rem;
+}
+
+.countdown{
+font-size:2rem;
+font-weight:bold;
+margin-top:20px;
+}
+
+.button{
+display:inline-block;
+margin-top:25px;
+padding:15px 30px;
+background:white;
+color:#1e3a8a;
+text-decoration:none;
+border-radius:50px;
+font-weight:bold;
+}
+
+.gallery{
+padding:50px 20px;
+text-align:center;
+}
+
+.gallery h2{
+margin-bottom:30px;
+}
+
+.gallery img{
+width:90%;
+max-width:700px;
+border-radius:20px;
+margin:20px auto;
+display:block;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.video-section{
+padding:50px 20px;
+text-align:center;
+}
+
+video{
+width:90%;
+max-width:700px;
+border-radius:20px;
+}
+
+.message{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+line-height:2;
+font-size:1.1rem;
+}
+
+.message h2{
+text-align:center;
+margin-bottom:30px;
+}
+
+.footer{
+text-align:center;
+padding:60px 20px;
+font-size:1.2rem;
+}
+
 </style>
 </head>
+
 <body>
 
-<div class="float" style="left:5%;animation-duration:12s">ðŸ’™</div>
-<div class="float" style="left:20%;animation-duration:16s">ðŸŽˆ</div>
-<div class="float" style="left:45%;animation-duration:10s">ðŸ’™</div>
-<div class="float" style="left:70%;animation-duration:15s">ðŸŽ‚</div>
-<div class="float" style="left:90%;animation-duration:11s">âœ¨</div>
-
 <section class="hero">
-<h1>ðŸŽ‰ Happy Birthday Grace Wonder Olik ðŸ’™</h1>
-<h2 id="typewriter" class="type"></h2>
-<div class="count" id="countdown"></div>
-<p>Traveler âœˆï¸ â€¢ Adventurer ðŸŒ â€¢ Duke of Edinburgh Award Member ðŸ† â€¢ Pork Enthusiast ðŸ¥“ â€¢ Loyal Friend ðŸ’™</p>
-<p><a class="btn" target="_blank" href="https://www.youtube.com/results?search_query=Why+Elevation+Worship">ðŸŽµ Play "Why" by Elevation Worship</a></p>
+
+<h1>Happy Birthday Grace Wonder Olik</h1>
+
+<p>
+For the girl whose suitcase is always ready for adventure,
+whose smile brightens every room,
+whose loyalty never wavers,
+and whose love for pork deserves its own national holiday.
+</p>
+
+<div class="countdown" id="countdown"></div>
+
+<a
+class="button"
+target="_blank"
+href="https://www.youtube.com/results?search_query=Why+Elevation+Worship">
+Play Why by Elevation Worship
+</a>
+
 </section>
 
-<section>
-<div class="slideshow">
-<img class="slide" src="IMG-20260601-WA0039.jpg">
-<img class="slide" src="IMG-20260604-WA0003.jpg">
-<img class="slide" src="IMG-20260624-WA0007.jpg">
-<img class="slide" src="IMG-20260624-WA0011.jpg">
-</div>
+<section class="gallery">
+
+<h2>Our Memories Together</h2>
+
+<img src="IMG-20260601-WA0039.jpg" alt="Grace">
+<img src="IMG-20260604-WA0003.jpg" alt="Grace">
+<img src="IMG-20260624-WA0007.jpg" alt="Grace">
+<img src="IMG-20260624-WA0011.jpg" alt="Grace">
+
 </section>
 
-<section class="center">
-<h2>ðŸŽ¥ Our Memories</h2>
-<video controls width="90%">
+<section class="video-section">
+
+<h2>Special Video</h2>
+
+<video controls>
 <source src="VID-20260624-WA0009.mp4" type="video/mp4">
 </video>
+
 </section>
 
-<section>
-<div class="card">
-<h2>ðŸ’Œ To Wonder</h2>
+<section class="message">
+
+<h2>A Letter To Wonder</h2>
+
 <p>
-Happy Birthday, Grace Wonder Olik.
-Since March 12, 2026, you've become one of the most important people in my life.
-You've stayed through laughter, challenges, misunderstandings and victories.
+
+Happy Birthday Grace Wonder Olik.
+
+Since March 12, 2026, you have become one of the most important people in my life.
+
+You have been there through laughter, challenges, victories, disagreements and countless unforgettable moments.
+
+Your adventurous spirit is one of the most beautiful things about you.
+You embrace life with courage, curiosity and excitement.
+
+Your love for travel reflects the amazing person you are:
+someone who constantly seeks growth, discovery and new experiences.
+
+You are resilient.
+You are hardworking.
+You are committed.
+And your dedication to the Duke of Edinburgh International Award in Kenya proves that every day.
+
+Thank you for always helping me whenever life became difficult.
+
+Thank you for standing beside me through every storm.
+
+Thank you for always finding me whenever we disagreed so we could talk, forgive each other and move forward.
+
+That is one of the many reasons our friendship means so much to me.
+
+I will always treasure our memories together.
+
+From the dinner date at Fat Baby Hotel,
+to the meals we prepared together,
+to the conversations and laughter we shared.
+
+And of course,
+a birthday message for Grace would never be complete without mentioning pork.
+
+If enjoying pork were an Olympic event,
+Kenya would definitely win gold because of you.
+
+As my TikTok streak partner,
+my friend,
+and someone I deeply appreciate,
+
+I pray that God blesses you abundantly.
+
+May your journeys be exciting.
+
+May your dreams become reality.
+
+May your favourite colour blue always remind you that the sky is only the beginning.
+
+May your future be filled with happiness,
+purpose,
+success,
+love,
+great food,
+and unforgettable adventures.
+
+Happy Birthday Wonder.
+
+May God bless you today and always.
+
 </p>
-<p>
-Your sense of adventure is unmatched. You chase experiences, embrace journeys,
-and remind everyone around you that life is meant to be explored.
-</p>
-<p>
-You are resilient, hardworking and deeply committed to the Duke of Edinburgh International Award in Kenya.
-You inspire people not only through your achievements but through your character.
-</p>
-<p>
-Thank you for helping me when I needed support. Thank you for standing beside me during life's turbulence.
-Thank you for always finding me after disagreements so we could talk, forgive and move forward.
-</p>
-<p>
-One memory I'll never forget is our dinner at Fat Baby Hotel and the moments we prepared meals together.
-Those simple moments became unforgettable memories.
-</p>
-<p>
-And of course... a birthday message for Grace would be incomplete without mentioning pork. ðŸ¥“ðŸ˜„
-If there were world championships in appreciating pork, you'd probably win gold for Kenya.
-</p>
-<p>
-As my TikTok streak partner ðŸ”¥, loyal friend ðŸ’™ and companion in countless memories,
-I pray that God blesses you abundantly this year.
-May your travels be exciting, your dreams come true, your heart remain kind,
-and your future become brighter than ever.
-</p>
-<h3>Happy Birthday Wonder ðŸ’™ðŸŽ‚âœ¨</h3>
-</div>
+
 </section>
 
-<section class="center">
-<h2>ðŸŒŸ Birthday Wishes</h2>
-<p>May your skies stay blue ðŸ’™</p>
-<p>May your adventures never end âœˆï¸</p>
-<p>May your table always have great food ðŸ¥“</p>
-<p>May your dreams become reality ðŸŒ</p>
-<p>May God bless you abundantly ðŸ™</p>
+<section class="footer">
+
+<h2>Happy Birthday Wonder</h2>
+
+<p>
+With appreciation, gratitude and friendship,
+Julius
+</p>
+
 </section>
 
 <script>
-const msg="For the girl with an undisputed sense of adventure...";
-let i=0;
-function type(){
- if(i<msg.length){
-  document.getElementById('typewriter').innerHTML+=msg.charAt(i++);
-  setTimeout(type,60);
- }
-}
-type();
 
-const target=new Date("July 2, 2026 00:00:00").getTime();
-function tick(){
- const now=new Date().getTime(), diff=target-now;
- if(diff<=0){document.getElementById("countdown").innerHTML="ðŸŽŠ TODAY IS THE DAY! ðŸŽŠ";return;}
- let d=Math.floor(diff/86400000);
- let h=Math.floor((diff%86400000)/3600000);
- let m=Math.floor((diff%3600000)/60000);
- let s=Math.floor((diff%60000)/1000);
- document.getElementById("countdown").innerHTML=`â³ ${d}d ${h}h ${m}m ${s}s until July 2, 2026`;
-}
-setInterval(tick,1000); tick();
+const targetDate =
+new Date("July 2, 2026 00:00:00").getTime();
 
-let idx=0;
-const slides=document.getElementsByClassName("slide");
-function show(){
- for(let s of slides)s.style.display="none";
- idx=(idx+1)%slides.length;
- slides[idx].style.display="block";
- setTimeout(show,3000);
+function updateCountdown(){
+
+const now = new Date().getTime();
+
+const distance = targetDate - now;
+
+if(distance < 0){
+
+document.getElementById("countdown").innerHTML =
+"Today is your birthday!";
+
+return;
+
 }
-if(slides.length){slides[0].style.display="block";setTimeout(show,3000);}
+
+const days =
+Math.floor(distance/(1000*60*60*24));
+
+const hours =
+Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+const minutes =
+Math.floor((distance%(1000*60*60))/(1000*60));
+
+const seconds =
+Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML =
+days + " days " +
+hours + " hours " +
+minutes + " minutes " +
+seconds + " seconds until July 2, 2026";
+
+}
+
+setInterval(updateCountdown,1000);
+
+updateCountdown();
+
 </script>
+
 </body>
-  </html>
+ </html>
