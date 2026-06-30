@@ -1,238 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Happy Birthday Grace Wonder Olik</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-
-<div id="particles"></div>
-
-<header class="hero">
-
-<h1>🎉 Happy Birthday 🎉</h1>
-
-<h2>Grace Wonder Olik 💙</h2>
-
-<p>
-
-A Beautiful Tribute from
-
-<strong>JOOUST President's Award Kenya</strong>
-
-</p>
-
-</header>
-
-<section class="countdown-section">
-
-<h2>Countdown To Your Special Day</h2>
-
-<div id="countdown">
-
-<div class="time-box">
-
-<span id="days">00</span>
-
-<p>Days</p>
-
-</div>
-
-<div class="time-box">
-
-<span id="hours">00</span>
-
-<p>Hours</p>
-
-</div>
-
-<div class="time-box">
-
-<span id="minutes">00</span>
-
-<p>Minutes</p>
-
-</div>
-
-<div class="time-box">
-
-<span id="seconds">00</span>
-
-<p>Seconds</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="birthdayContent" class="hidden">
-
-<h1 class="birthday-title">
-
-🎂 HAPPY BIRTHDAY GRACE WONDER OLIK 🎂
-
-</h1>
-
-<div id="balloons"></div>
-
-<canvas id="confetti"></canvas>
-
-</section>
-
-<section class="gallery">
-
-<h2>Wonderful Memories</h2<section class="gallery">
-
-<h2>Wonderful Memories</h2>
-
-<div class="gallery-grid">
-
-<img src="1000854499.jpg" alt="Grace Wonder Olik">
-
-<img src="1000854502.jpg" alt="Grace Wonder Olik">
-
-<img src="1000854491.jpg" alt="Grace Wonder Olik">
-
-<img src="1000820857.jpg" alt="Grace Wonder Olik">
-
-<img src="1000820831.jpg" alt="Grace Wonder Olik">
-
-<img src="1000820763.jpg" alt="Grace Wonder Olik">
-
-<img src="1000836660.jpg" alt="Grace Wonder Olik">
-
-</div>
-
-</section>v>
-
-</section>
-
-<section class="video-section">
-
-<h2>Special Moments</h2>
-
-<video controls><section class="video-section">
-
-<section class="video-section">
-
-<h2>Special Moments</h2>
-
-<video controls autoplay muted loop playsinline>
-
-<source src="VID-20260512-WA0026.mp4" type="video/mp4">
-
-Your browser does not support video.
-
-</video>
-
-</section><seno/section>
-
-eo</vidmp4</secticontro4ection class="message">
-
-<h2>💙 A Message From JOOUST President's Award Kenya 💙</h2>
-
-<p>
-
-Dear <strong>Grace Wonder Olik</strong>,
-
-</p>
-
-<p>
-
-Today we celebrate not only your birthday but also the amazing person you are.
-
-Your kindness, humility, beautiful smile and unwavering dedication continue to inspire everyone privileged to know you.
-
-</p>
-
-<p>
-
-As one of the most committed members of the
-
-<strong>President's Award Kenya - JOOUST Chapter</strong>,
-
-you have consistently demonstrated the true values of leadership, service, resilience and teamwork.
-
-</p>
-
-<p>
-
-Your willingness to serve others, your compassionate heart and your cheerful personality have left an unforgettable mark within our Award family.
-
-</p>
-
-<p>
-
-Your favourite colour is blue, and just like the endless blue sky, may your future be filled with limitless opportunities, happiness and success.
-
-</p>
-
-<p>
-
-May God continue blessing you with wisdom, good health, peace, prosperity and countless adventures.
-
-May every dream you pursue become reality.
-
-</p>
-
-<p>
-
-Never stop shining.
-
-Never stop smiling.
-
-Never stop inspiring.
-
-</p>
-
-<h3>
-
-Happy Birthday Grace Wonder Olik!
-
-🎂🎉💙🥳
-
-</h3>
-
-<p>
-
-With Love,
-
-<br>
-
-<strong>
-
-JOOUST President's Award Kenya Family
-
-</strong>
-
-</p>
-
-</section>
-
-<footer>
-
-Made with 💙 for Grace Wonder Olik
-
-<br>
-
-JOOUST President's Award Kenya
-
-</footer>
-
-<script src="script.js"></script>
-
-</body>
-    </html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOOUST President's Award - Happy Birthday Grace!</title>
+    <style>
+        :root {
+            --deep-royal: #051329;
+            --electric-sapphire: #007BFF;
+            --cyan-glow: #00E5FF;
+            --gold-accent: #FFD700;
+            --pure-white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--deep-royal);
+            color: var(--pure-white);
+            font-family: 'Montserrat', 'Segoe UI', Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* --- COUNTDOWN GATEWAY --- */
+        #countdown-screen {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at center, #0c2346 0%, var(--deep-royal) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .branding-sub {
+            color: var(--gold-accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        #countdown-screen h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .grid-timer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            padding: 20px 10px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .metric-card slot {
+            display: block;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--cyan-glow);
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+        }
+
+        .metric-card label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 5px;
+            display: block;
+        }
+
+        /* --- MAIN BIRTHDAY HUB --- */
+        #main-celebration-hub {
+            display: none;
+            width: 100%;
+            max-width: 1100px;
+            padding: 40px 20px;
+            opacity: 0;
+            transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 10;
+        }
+
+        .layout-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .layout-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Message Formatting */
+        .showcase-header {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .showcase-header h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .showcase-header h1 span {
+            color: var(--cyan-glow);
+            text-shadow: 0 0 20px rgba(0, 225, 255, 0.3);
+        }
+
+        .letter-container {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .letter-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--cyan-glow), var(--electric-sapphire));
+        }
+
+        .letter-container p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        .letter-container p strong {
+            color: var(--pure-white);
+            font-weight: 600;
+        }
+
+        .signature-block {
+            margin-top: 35px;
+            text-align: right;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        .signature-title {
+            color: var(--gold-accent);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .signature-sub {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 1px;
+            margin-top: 3px;
+        }
+
+        /* --- PREMIUM THEATER SLIDER --- */
+        .theater-wrapper {
+            position: relative;
+            background: #020813;
+            border-radius: 24px;
+            padding: 15px;
+            border: 1px solid rgba(0, 229, 255, 0.25);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+        }
+
+        .theater-viewport {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        .theater-strip {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .theater-cell {
+            min-width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .theater-cell img, .theater-cell video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Navigation Arrows */
+        .action-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(5, 19, 41, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--cyan-glow);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            z-index: 50;
+        }
+
+        .action-arrow:hover {
+            background: var(--cyan-glow);
+            color
+        
