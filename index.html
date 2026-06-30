@@ -234,7 +234,7 @@
 
         <div class="message-card">
             <p><strong>To Our Exceptional Leader & Peer,</strong></p>
-            <p>On this special day, July 2nd, the entire JOOUST President's Award Kenya family stands together to celebrate an incredibly vital pillar of our club. Grace, your name perfectly mirrors the essence of who you are—a true <em>Wonder</em> to everyone fortunate enough to work alongside you.</p>
+            <p>On this special day, July 2nd, the entire JOOUST family stands together to celebrate an incredibly vital pillar of our team. Grace, your name perfectly mirrors the essence of who you are—a true <em>Wonder</em> to everyone fortunate enough to work alongside you.</p>
             <p>As a deeply committed member of the President's Award, your resilience, unmatched diligence, and unwavering dedication inspire all of us. You approach every challenge with rare strength and lead by beautiful example. Beyond your brilliant leadership, your genuine kindness warms our team, and your gorgeous grace lights up every single room you step into.</p>
             <p>Thank you for your outstanding service, your bright spirit, and for always pushing the boundaries of what we can achieve together. We wish you an exceptional year filled with beautiful new horizons, grand adventures, and endless joy!</p>
             <p style="text-align: right; font-weight: bold; color: var(--gold); margin-top: 20px;">— With Pride & Warmest Wishes,<br>JOOUST President's Award Kenya Club</p>
@@ -247,11 +247,15 @@
                 <div class="slide"><img src="1000854514.jpg" alt="Grace Beautiful Blue Dress"></div>
                 <div class="slide"><img src="1000854511.jpg" alt="Grace Casual Walk"></div>
                 <div class="slide"><img src="1000854504.jpg" alt="Grace Gorgeous Portrait"></div>
-                <div class="slide"><img src="1000836732.jpg" alt="JOOUST President's Award Field Outing"></div>
-                <div class="slide"><img src="1000836676.jpg" alt="JOOUST Club Administration Block Group"></div>
-                <div class="slide"><img src="1000836660.jpg" alt="JOOUST President's Award Team Group"></div>
-                <div class="slide"><img src="1000820763.jpg" alt="Community Service Cleaning Drive Team"></div>
-                <div class="slide"><img src="1000820831.jpg" alt="Grace Community Service Initiative"></div>
+                <div class="slide"><img src="10008502.jpg" alt="Grace Wearing Traditional Hat"></div>
+                <div class="slide"><img src="1000836732.jpg" alt="JOOUST Field Outing"></div>
+                <div class="slide"><img src="1000836676.jpg" alt="Administration Block Group Photo"></div>
+                <div class="slide"><img src="1000836660.jpg" alt="JOOUST Team Group Photo"></div>
+                <div class="slide"><img src="1000820763.jpg" alt="Community Service Cleaning Drive"></div>
+                <div class="slide"><img src="1000820757.jpg" alt="Grace Cleaning Initiative"></div>
+                <div class="slide"><img src="1000820831.jpg" alt="Grace Community Service Pose"></div>
+                <div class="slide"><img src="1000820842.jpg" alt="President's Award Team Group Line"></div>
+                <div class="slide"><img src="1000820857.jpg" alt="Team Cleaning Close-up"></div>
                 <div class="slide">
                     <video controls muted loop>
                         <source src="1000820875.mp4" type="video/mp4">
@@ -280,63 +284,5 @@
             document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
             document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
             document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
-
-            if (difference <= 0) {
-                clearInterval(countdownInterval);
-                unlockBirthdayPage();
-            }
-        }, 1000);
-
-        function unlockBirthdayPage() {
-            document.getElementById("countdown-container").style.display = "none";
-            const content = document.getElementById("birthday-content");
-            content.style.display = "block";
-            setTimeout(() => { content.style.opacity = "1"; }, 100);
-            initCanvas();
-        }
-
-        // --- SLIDER LOGIC ---
-        let slideIndex = 0;
-        function moveSlide(n) {
-            const slides = document.getElementsByClassName("slide");
-            slideIndex += n;
-            if (slideIndex >= slides.length) { slideIndex = 0; }
-            if (slideIndex < 0) { slideIndex = slides.length - 1; }
-            document.getElementById("slider").style.transform = `translateX(-${slideIndex * 100}%)`;
-        }
-
-        // --- BALLOON & COLOR BLAST CANVAS ENGINE ---
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        let balloons = [];
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-
-        class Particle {
-            constructor(x, y, color) {
-                this.x = x;
-                this.y = y;
-                this.color = color;
-                this.radius = Math.random() * 3 + 2;
-                this.speedX = (Math.random() - 0.5) * 8;
-                this.speedY = (Math.random() - 0.5) * 8;
-                this.alpha = 1;
-                this.decay = Math.random() * 0.015 + 0.005;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                this.alpha -= this.decay;
-            }
-            draw() {
-                ctx.save();
-                ctx.globalAlpha = this.alpha;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius,
- 
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" +
+    
