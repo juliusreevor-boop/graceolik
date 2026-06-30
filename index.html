@@ -1,288 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Grace Wonder Olik!</title>
-    <style>
-        :root {
-            --primary-blue: #0A2540;
-            --electric-blue: #00D4FF;
-            --soft-blue: #E6F0FA;
-            --gold: #FFD700;
-        }
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--primary-blue);
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            overflow-x: hidden;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* Countdown Container */
-        #countdown-container {
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 1s ease;
-            z-index: 10;
-        }
+<title>Happy Birthday Grace Wonder Olik</title>
 
-        h2 {
-            color: var(--electric-blue);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
+<link rel="stylesheet" href="style.css">
 
-        .timer {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .time-box {
-            background: rgba(0, 212, 255, 0.1);
-            padding: 15px 20px;
-            border-radius: 10px;
-            min-width: 70px;
-            border: 1px solid var(--electric-blue);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        .time-box span {
-            display: block;
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #ffffff;
-        }
-
-        .time-box label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: var(--electric-blue);
-            letter-spacing: 1px;
-        }
-
-        /* Main Content (Hidden Initially) */
-        #birthday-content {
-            display: none;
-            max-width: 800px;
-            width: 90%;
-            padding: 40px 20px;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-            z-index: 5;
-        }
-
-        /* Header / Logo Area */
-        .club-header {
-            font-weight: 600;
-            letter-spacing: 2px;
-            color: var(--gold);
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: #ffffff;
-            margin-top: 0;
-            text-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
-        }
-
-        h1 span {
-            color: var(--electric-blue);
-        }
-
-        /* Message Box */
-        .message-card {
-            background: rgba(255, 255, 255, 0.07);
-            padding: 35px;
-            border-radius: 20px;
-            line-height: 1.8;
-            font-size: 1.1rem;
-            margin: 30px 0;
-            border-left: 5px solid var(--gold);
-            text-align: left;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .message-card p {
-            margin-bottom: 15px;
-        }
-
-        /* Slider Photo Gallery */
-        .gallery-container {
-            margin-top: 40px;
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 2px solid var(--electric-blue);
-        }
-
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 100%;
-        }
-
-        .slide {
-            min-width: 100%;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #000;
-            height: 450px;
-        }
-
-        .slide img, .slide video {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* Slider Controls */
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 45px;
-            height: 45px;
-            background: rgba(10, 37, 64, 0.8);
-            color: var(--electric-blue);
-            font-weight: bold;
-            font-size: 20px;
-            border: 1px solid var(--electric-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            user-select: none;
-            transition: 0.3s;
-            z-index: 10;
-        }
-
-        .prev:hover, .next:hover {
-            background: var(--electric-blue);
-            color: var(--primary-blue);
-        }
-
-        .prev { left: 15px; }
-        .next { right: 15px; }
-
-        /* Canvas for Balloon Burst */
-        #canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 999;
-        }
-    </style>
 </head>
+
 <body>
 
-    <canvas id="canvas"></canvas>
+<div id="particles"></div>
 
-    <div id="countdown-container">
-        <h2>Anticipating Something Wonderful...</h2>
-        <div class="timer">
-            <div class="time-box">
-                <span id="days">00</span>
-                <label>Days</label>
-            </div>
-            <div class="time-box">
-                <span id="hours">00</span>
-                <label>Hours</label>
-            </div>
-            <div class="time-box">
-                <span id="minutes">00</span>
-                <label>Mins</label>
-            </div>
-            <div class="time-box">
-                <span id="seconds">00</span>
-                <label>Secs</label>
-            </div>
-        </div>
-    </div>
+<header class="hero">
 
-    <div id="birthday-content">
-        <div class="club-header">Jaramogi Oginga Odinga University of Science and Technology</div>
-        <div class="club-header" style="color: var(--electric-blue); margin-bottom: 30px;">The President's Award - Kenya Club</div>
-        
-        <h1>Happy Birthday, <br><span>Grace Wonder Olik!</span> 💙</h1>
+<h1>🎉 Happy Birthday 🎉</h1>
 
-        <div class="message-card">
-            <p><strong>To Our Exceptional Leader & Peer,</strong></p>
-            <p>On this special day, July 2nd, the entire JOOUST family stands together to celebrate an incredibly vital pillar of our team. Grace, your name perfectly mirrors the essence of who you are—a true <em>Wonder</em> to everyone fortunate enough to work alongside you.</p>
-            <p>As a deeply committed member of the President's Award, your resilience, unmatched diligence, and unwavering dedication inspire all of us. You approach every challenge with rare strength and lead by beautiful example. Beyond your brilliant leadership, your genuine kindness warms our team, and your gorgeous grace lights up every single room you step into.</p>
-            <p>Thank you for your outstanding service, your bright spirit, and for always pushing the boundaries of what we can achieve together. We wish you an exceptional year filled with beautiful new horizons, grand adventures, and endless joy!</p>
-            <p style="text-align: right; font-weight: bold; color: var(--gold); margin-top: 20px;">— With Pride & Warmest Wishes,<br>JOOUST President's Award Kenya Club</p>
-        </div>
+<h2>Grace Wonder Olik 💙</h2>
 
-        <h2 style="font-size: 1.5rem; margin-top: 40px;">📸 Moments of Excellence & Leadership</h2>
-        
-        <div class="gallery-container">
-            <div class="slider" id="slider">
-                <div class="slide"><img src="1000854514.jpg" alt="Grace Beautiful Blue Dress"></div>
-                <div class="slide"><img src="1000854511.jpg" alt="Grace Casual Walk"></div>
-                <div class="slide"><img src="1000854504.jpg" alt="Grace Gorgeous Portrait"></div>
-                <div class="slide"><img src="10008502.jpg" alt="Grace Wearing Traditional Hat"></div>
-                <div class="slide"><img src="1000836732.jpg" alt="JOOUST Field Outing"></div>
-                <div class="slide"><img src="1000836676.jpg" alt="Administration Block Group Photo"></div>
-                <div class="slide"><img src="1000836660.jpg" alt="JOOUST Team Group Photo"></div>
-                <div class="slide"><img src="1000820763.jpg" alt="Community Service Cleaning Drive"></div>
-                <div class="slide"><img src="1000820757.jpg" alt="Grace Cleaning Initiative"></div>
-                <div class="slide"><img src="1000820831.jpg" alt="Grace Community Service Pose"></div>
-                <div class="slide"><img src="1000820842.jpg" alt="President's Award Team Group Line"></div>
-                <div class="slide"><img src="1000820857.jpg" alt="Team Cleaning Close-up"></div>
-                <div class="slide">
-                    <video controls muted loop>
-                        <source src="1000820875.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-            <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
-            <a class="next" onclick="moveSlide(1)">&#10095;</a>
-        </div>
-    </div>
+<p>
 
-    <script>
-        // TARGET DATE: July 2nd, 2026 00:00:00
-        const targetDate = new Date("July 2, 2026 00:00:00").getTime();
+A Beautiful Tribute from
 
-        const countdownInterval = setInterval(function() {
-            const now = new Date().getTime();
-            const difference = targetDate - now;
+<strong>JOOUST President's Award Kenya</strong>
 
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+</p>
 
-            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
-            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" +
-    
+</header>
+
+<section class="countdown-section">
+
+<h2>Countdown To Your Special Day</h2>
+
+<div id="countdown">
+
+<div class="time-box">
+
+<span id="days">00</span>
+
+<p>Days</p>
+
+</div>
+
+<div class="time-box">
+
+<span id="hours">00</span>
+
+<p>Hours</p>
+
+</div>
+
+<div class="time-box">
+
+<span id="minutes">00</span>
+
+<p>Minutes</p>
+
+</div>
+
+<div class="time-box">
+
+<span id="seconds">00</span>
+
+<p>Seconds</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="birthdayContent" class="hidden">
+
+<h1 class="birthday-title">
+
+🎂 HAPPY BIRTHDAY GRACE WONDER OLIK 🎂
+
+</h1>
+
+<div id="balloons"></div>
+
+<canvas id="confetti"></canvas>
+
+</section>
+
+<section class="gallery">
+
+<h2>Wonderful Memories</h2>
+
+<div class="gallery-grid">
+
+<img src="grace1.jpg">
+
+<img src="grace2.jpg">
+
+<img src="grace3.jpg">
+
+<img src="grace4.jpg">
+
+<img src="grace5.jpg">
+
+<img src="grace6.jpg">
+
+<img src="grace7.jpg">
+
+</div>
+
+</section>
+
+<section class="video-section">
+
+<h2>Special Moments</h2>
+
+<video controls>
+
+<source src="grace.mp4" type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+</section>
+
+<section class="message">
+
+<h2>💙 A Message From JOOUST President's Award Kenya 💙</h2>
+
+<p>
+
+Dear <strong>Grace Wonder Olik</strong>,
+
+</p>
+
+<p>
+
+Today we celebrate not only your birthday but also the amazing person you are.
+
+Your kindness, humility, beautiful smile and unwavering dedication continue to inspire everyone privileged to know you.
+
+</p>
+
+<p>
+
+As one of the most committed members of the
+
+<strong>President's Award Kenya - JOOUST Chapter</strong>,
+
+you have consistently demonstrated the true values of leadership, service, resilience and teamwork.
+
+</p>
+
+<p>
+
+Your willingness to serve others, your compassionate heart and your cheerful personality have left an unforgettable mark within our Award family.
+
+</p>
+
+<p>
+
+Your favourite colour is blue, and just like the endless blue sky, may your future be filled with limitless opportunities, happiness and success.
+
+</p>
+
+<p>
+
+May God continue blessing you with wisdom, good health, peace, prosperity and countless adventures.
+
+May every dream you pursue become reality.
+
+</p>
+
+<p>
+
+Never stop shining.
+
+Never stop smiling.
+
+Never stop inspiring.
+
+</p>
+
+<h3>
+
+Happy Birthday Grace Wonder Olik!
+
+🎂🎉💙🥳
+
+</h3>
+
+<p>
+
+With Love,
+
+<br>
+
+<strong>
+
+JOOUST President's Award Kenya Family
+
+</strong>
+
+</p>
+
+</section>
+
+<footer>
+
+Made with 💙 for Grace Wonder Olik
+
+<br>
+
+JOOUST President's Award Kenya
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+    </html>
