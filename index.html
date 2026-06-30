@@ -1,847 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Grace Wonder Olik!</title>
+    <style>
+        :root {
+            --primary-blue: #0A2540;
+            --electric-blue: #00D4FF;
+            --soft-blue: #E6F0FA;
+            --gold: #FFD700;
+        }
 
-<title>Happy Birthday Grace Wonder Olik</title>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            text-align: center;
+        }
 
-<style>
+        /* Countdown Container */
+        #countdown-container {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 1s ease;
+            z-index: 10;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
+        h2 {
+            color: var(--electric-blue);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
 
-body{
-background:linear-gradient(135deg,#0f172a,#1e3a8a,#3b82f6);
-color:white;
-overflow-x:hidden;
-}
+        .timer {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
 
-.hero{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:30px;
-}
+        .time-box {
+            background: rgba(0, 212, 255, 0.1);
+            padding: 15px 20px;
+            border-radius: 10px;
+            min-width: 70px;
+            border: 1px solid var(--electric-blue);
+        }
 
-.hero h1{
-font-size:3rem;
-margin-bottom:20px;
-animation:fadeIn 2s ease;
-}
+        .time-box span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
 
-.hero p{
-font-size:1.2rem;
-max-width:850px;
-line-height:1.8;
-}
+        .time-box label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--electric-blue);
+            letter-spacing: 1px;
+        }
 
-.countdown{
-margin-top:25px;
-font-size:2rem;
-font-weight:bold;
-background:rgba(255,255,255,0.15);
-padding:15px 25px;
-border-radius:20px;
-}
+        /* Main Content (Hidden Initially) */
+        #birthday-content {
+            display: none;
+            max-width: 800px;
+            width: 90%;
+            padding: 40px 20px;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+            z-index: 5;
+        }
 
-.music{
-margin-top:25px;
-}
+        /* Header / Logo Area */
+        .club-header {
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
 
-audio{
-width:320px;
-max-width:90%;
-}
+        h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-top: 0;
+            text-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+        }
 
-.gallery{
-padding:50px 20px;
-}
+        h1 span {
+            color: var(--electric-blue);
+        }
 
-.section-title{
-text-align:center;
-font-size:2rem;
-margin-bottom:30px;
-}
+        /* Message Box */
+        .message-card {
+            background: rgba(255, 255, 255, 0.07);
+            padding: 35px;
+            border-radius: 20px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin: 30px 0;
+            border-left: 5px solid var(--gold);
+            text-align: left;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
 
-.card{
-background:rgba(255,255,255,0.1);
-backdrop-filter:blur(10px);
-border-radius:20px;
-overflow:hidden;
-margin:25px auto;
-max-width:900px;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
-}
+        .message-card p {
+            margin-bottom: 15px;
+        }
 
-.card img{
-width:100%;
-display:block;
-}
+        /* Slider Photo Gallery */
+        .gallery-container {
+            margin-top: 40px;
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 2px solid var(--electric-blue);
+        }
 
-.caption{
-padding:20px;
-font-size:1.1rem;
-line-height:1.8;
-}
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
 
-.video-section{
-padding:50px 20px;
-text-align:center;
-}
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            height: 450px;
+        }
 
-video{
-width:95%;
-max-width:800px;
-border-radius:20px;
-}
+        .slide img, .slide video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
 
-.message{
-padding:60px 20px;
-max-width:1000px;
-margin:auto;
-line-height:2;
-font-size:1.1rem;
-}
+        /* Slider Controls */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            background: rgba(10, 37, 64, 0.8);
+            color: var(--electric-blue);
+            font-weight: bold;
+            font-size: 20px;
+            border: 1px solid var(--electric-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            transition: 0.3s;
+            z-index: 10;
+        }
 
-.message h2{
-text-align:center;
-margin-bottom:30px;
-}
+        .prev:hover, .next:hover {
+            background: var(--electric-blue);
+            color: var(--primary-blue);
+        }
 
-.footer{
-text-align:center;
-padding:60px 20px;
-}
+        .prev { left: 15px; }
+        .next { right: 15px; }
 
-.footer h1{
-margin-top:20px;
-}
-
-.balloon{
-position:fixed;
-bottom:-100px;
-font-size:30px;
-animation:floatUp 12s linear infinite;
-opacity:0.7;
-pointer-events:none;
-}
-
-.balloon:nth-child(1){
-left:10%;
-animation-delay:0s;
-}
-
-.balloon:nth-child(2){
-left:30%;
-animation-delay:4s;
-}
-
-.balloon:nth-child(3){
-left:50%;
-animation-delay:2s;
-}
-
-.balloon:nth-child(4){
-left:70%;
-animation-delay:6s;
-}
-
-.balloon:nth-child(5){
-left:90%;
-animation-delay:8s;
-}
-
-@keyframes floatUp{
-0%{
-transform:translateY(0);
-}
-100%{
-transform:translateY(-120vh);
-}
-}
-
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-</style>
+        /* Canvas for Balloon Burst */
+        #canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="balloon">🎈</div>
-<div class="balloon">🎈</div>
-<div class="balloon">🎈</div>
-<div class="balloon">🎈</div>
-<div class="balloon">🎈</div>
-
-<section class="hero">
-
-<h1>
-Happy Birthday Grace Wonder Olik
-</h1>
-
-<p>
-To the girl whose suitcase is always ready for adventure,
-whose smile brightens every room,
-whose loyalty never wavers,
-and whose love for pork should honestly be studied by scientists.
-</p>
-
-<div class="countdown" id="countdown">
-Loading countdown...
-</div>
-
-<div class="music">
-
-<h3 style="margin-bottom:10px;">
-Play Why by Elevation Worship
-</h3>
-
-<audio id="birthdaySong" controls>
-<source src="WHY.mp3" type="audio/mpeg">
-</audio>
-
-</div>
-
-</section>
-
-<section class="gallery">
-
-<h2 class="section-title">
-Our Beautiful Memories
-</h2>
-
-<div class="card">
-<img src="IMG-20260601-WA0039.jpg">
-<div class="caption">
-Grace and her adventurous spirit.
-Some people travel to see places.
-Grace travels to collect stories.
-</div>
-</div>
-
-<div class="card">
-<img src="IMG-20260604-WA0003.jpg">
-<div class="caption">
-A committed member of the Duke of Edinburgh International Award Kenya.
-Strong. Resilient. Purposeful.
-</div>
-</div>
-
-<div class="card">
-<img src="IMG-20260624-WA0007.jpg">
-<div class="caption">
-Public Service Announcement:
-Never stand between Grace and pork.
-Your safety cannot be guaranteed.
-</div>
-</div>
-
-<div class="card">
-<img src="IMG-20260624-WA0011.jpg">
-<div class="caption">
-Kindness is her superpower.
-Whenever life became difficult,
-she always showed up.
-</div>
-</div>
-
-</section>
-
-<section class="video-section">
-
-<h2 class="section-title">
-One Of My Favourite Memories
-</h2>
-
-<video controls>
-<source src="VID-20260624-WA0009.mp4" type="video/mp4">
-</video>
-
-</section>
-
-<section class="message">
-
-<h2>
-A Letter To Wonder
-</h2>
-
-<p>
-
-Happy Birthday Grace Wonder Olik.
-
-Today is not just another day.
-It is the celebration of someone whose presence has made my life brighter, richer and more meaningful.
-
-Since March 12th 2026,
-you have become one of the most important people in my life.
-
-You have been there through victories and setbacks,
-through laughter and disagreements,
-through moments of certainty and moments of confusion.
-
-Your adventurous spirit is unmatched.
-
-You embrace life with courage,
-curiosity and excitement.
-
-Your love for travelling reflects who you truly are:
-someone who refuses to stay still when there are experiences waiting to be discovered.
-
-You are resilient.
-
-You are hardworking.
-
-You are committed.
-
-And your dedication to the Duke of Edinburgh International Award in Kenya proves that every single day.
-
-Thank you for every conversation.
-
-Thank you for every lesson.
-
-Thank you for every laugh.
-
-Thank you for always finding me whenever disagreements tried to separate us.
-
-Somehow,
-even when we get angry,
-we always end up talking,
-forgiving,
-and choosing our friendship again.
-
-That is something truly special.
-
-One of my favourite memories will always be the dinner you treated me to at Fat Baby Hotel.
-
-It wasn't just about the food.
-
-It was about the kindness behind the gesture.
-
-I will also never forget the moments we prepared food together,
-shared meals together,
-and simply enjoyed life together.
-
-And of course,
-we cannot talk about Grace Wonder without mentioning pork.
-
-If there was an Olympic event for enjoying pork,
-you would bring home gold for Kenya.
-
-As my TikTok streak partner,
-my friend,
-and someone I deeply appreciate,
-
-I pray that God blesses every step you take.
-
-May your journeys be exciting.
-
-May your dreams become reality.
-
-May your table never lack delicious food.
-
-May your heart remain kind.
-
-May every adventure lead you closer to the life you deserve.
-
-And may your favourite colour blue always remind you that the sky is not your limit.
-
-It is only the beginning.
-
-Happy Birthday Wonder.
-
-May God bless you today and always.
-
-</p>
-
-</section>
-
-<section class="footer">
-
-<h2>
-To My TikTok Streak Partner
-</h2>
-
-<p>
-May our streak never break.
-May our friendship never fade.
-And may your birthday be as amazing as you are.
-</p>
-
-<h1>
-HAPPY BIRTHDAY WONDER
-</h1>
-
-<p>
-With appreciation, gratitude and countless memories,
-
-<br><br>
-
-Julius
-</p>
-
-</section>
-
-<script>
-
-const birthdayDate =
-new Date("July 2, 2026 00:00:00").getTime();
-
-function updateCountdown(){
-
-const now = new Date().getTime();
-
-const distance = birthdayDate - now;
-
-if(distance <= 0){
-
-document.getElementById("countdown").innerHTML =
-"Happy Birthday Grace Wonder Olik!";
-
-const song =
-document.getElementById("birthdaySong");
-
-song.play().catch(() => {});
-
-return;
-}
-
-const days =
-Math.floor(distance/(1000*60*60*24));
-
-const hours =
-Math.floor(
-(distance%(1000*60*60*24))
-/
-(1000*60*60)
-);
-
-const minutes =
-Math.floor(
-(distance%(1000*60*60))
-/
-(1000*60)
-);
-
-const seconds =
-Math.floor(
-(distance%(1000*60))
-/
-1000
-);
-
-document.getElementById("countdown").innerHTML =
-days + " days " +
-hours + " hours " +
-minutes + " minutes " +
-seconds + " seconds until July 2, 2026";
-
-}
-
-setInterval(updateCountdown,1000);
-
-updateCountdown();
-
-</script>
-
-</body>
- </html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Happy Birthday Grace Wonder Olik 💙</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
-
-body{
-background:linear-gradient(135deg,#0f172a,#1e3a8a,#3b82f6);
-color:white;
-overflow-x:hidden;
-}
-
-.hidden{
-display:none;
-}
-
-/* COUNTDOWN PAGE */
-
-#countdownPage{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:25px;
-}
-
-#countdownPage h1{
-font-size:3rem;
-margin-bottom:20px;
-}
-
-#countdown{
-font-size:2rem;
-font-weight:bold;
-margin-top:25px;
-background:rgba(255,255,255,0.15);
-padding:20px;
-border-radius:20px;
-backdrop-filter:blur(10px);
-}
-
-.intro{
-max-width:900px;
-line-height:1.8;
-font-size:1.2rem;
-}
-
-/* SURPRISE PAGE */
-
-#surprisePage{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100vh;
-overflow:hidden;
-display:none;
-}
-
-.slide{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-opacity:0;
-transition:opacity 2s ease-in-out;
-}
-
-.slide.active{
-opacity:1;
-}
-
-.overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.45);
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-z-index:10;
-}
-
-.overlay h1{
-font-size:3rem;
-margin-bottom:20px;
-}
-
-.overlay p{
-max-width:900px;
-line-height:1.8;
-font-size:1.2rem;
-}
-
-.signature{
-margin-top:30px;
-font-size:1.5rem;
-font-weight:bold;
-}
-
-.hearts{
-position:absolute;
-width:100%;
-height:100%;
-overflow:hidden;
-z-index:5;
-pointer-events:none;
-}
-
-.heart{
-position:absolute;
-bottom:-50px;
-animation:float linear forwards;
-}
-
-@keyframes float{
-
-0%{
-transform:translateY(0);
-opacity:0;
-}
-
-20%{
-opacity:1;
-}
-
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
-
-}
-
-@media(max-width:768px){
-
-#countdownPage h1{
-font-size:2rem;
-}
-
-.overlay h1{
-font-size:2rem;
-}
-
-.overlay p{
-font-size:1rem;
-}
-
-#countdown{
-font-size:1.4rem;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- COUNTDOWN PAGE -->
-
-<section id="countdownPage">
-
-<h1>🎉 Happy Birthday Grace Wonder Olik 💙</h1>
-
-<p class="intro">
-
-To the girl whose suitcase is always ready for adventure ✈️,
-
-whose smile brightens every room 😊,
-
-whose loyalty never wavers 💙,
-
-and whose love for pork should honestly be studied by scientists 🥓😂
-
-</p>
-
-<div id="countdown">
-Loading countdown...
-</div>
-
-</section>
-
-<!-- SURPRISE PAGE -->
-
-<section id="surprisePage">
-
-<img class="slide active" src="grace1.jpg">
-<img class="slide" src="grace2.jpg">
-<img class="slide" src="grace3.jpg">
-<img class="slide" src="grace4.jpg">
-<img class="slide" src="grace5.jpg">
-<img class="slide" src="grace6.jpg">
-<img class="slide" src="grace7.jpg">
-
-<div class="hearts" id="hearts"></div>
-
-<div class="overlay">
-
-<h1>🎂 Happy Birthday Wonder 💙</h1>
-
-<p>
-
-Dear Grace Wonder Olik,
-
-Today the world celebrates someone truly special.
-
-Someone adventurous enough to chase new horizons.
-
-Someone resilient enough to overcome every challenge.
-
-Someone hardworking enough to inspire everyone around her.
-
-Someone kind enough to always show up when needed.
-
-Since March 12th 2026, you've been one of the most important people in my life.
-
-Through every laugh, every disagreement, every conversation, every meal, and every memory, you've remained loyal, genuine and irreplaceable.
-
-You took me out to dinner at Fat Baby Hotel.
-
-You've stood beside me during difficult moments.
-
-You've encouraged me when I doubted myself.
-
-And somehow, even whenever we got mad at each other, we always found our way back.
-
-That is something truly rare.
-
-Your commitment to the Duke of Edinburgh International Award reflects the incredible person you are.
-
-A leader.
-
-A servant.
-
-A friend.
-
-An adventurer.
-
-And yes...
-
-Kenya's undisputed Pork Champion. 🥓😂
-
-May this year bring endless adventures, success, happiness, growth and unforgettable memories.
-
-May God bless every step you take.
-
-May your dreams become reality.
-
-May your smile never fade.
-
-And may our TikTok streak never break. 🔥
-
-Happy Birthday Wonder.
-
-You are appreciated more than words can ever express.
-
-💙
-
-</p>
-
-<div class="signature">
-With Love, Julius 💙
-</div>
-
-</div>
-
-<audio id="birthdayMusic" loop>
-<source src="birthday-song.mp3" type="audio/mpeg">
-</audio>
-
-</section>
-
-<script>
-
-/* COUNTDOWN */
-
-const birthday = new Date("July 2, 2026 00:00:00").getTime();
-
-const countdown = setInterval(function(){
-
-const now = new Date().getTime();
-
-const distance = birthday - now;
-
-const days = Math.floor(distance/(1000*60*60*24));
-const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
-const seconds = Math.floor((distance%(1000*60))/1000);
-
-document.getElementById("countdown").innerHTML =
-days + " Days " +
-hours + " Hours " +
-minutes + " Minutes " +
-seconds + " Seconds";
-
-if(distance <= 0){
-
-clearInterval(countdown);
-
-document.getElementById("countdownPage").style.display="none";
-
-document.getElementById("surprisePage").style.display="block";
-
-document.getElementById("birthdayMusic").play();
-
-startSlideshow();
-
-}
-
-},1000);
-
-/* SLIDESHOW */
-
-function startSlideshow(){
-
-const slides=document.querySelectorAll(".slide");
-
-let current=0;
-
-setInterval(()=>{
-
-slides[current].classList.remove("active");
-
-current++;
-
-if(current>=slides.length){
-current=0;
-}
-
-slides[current].classList.add("active");
-
-},5000);
-
-}
-
-/* FLOATING HEARTS */
-
-const hearts=document.getElementById("hearts");
-
-setInterval(()=>{
-
-const heart=document.createElement("div");
-
-heart.classList.add("heart");
-
-heart.innerHTML="💙";
-
-heart.style.left=Math.random()*100+"%";
-
-heart.style.fontSize=(20+Math.random()*40)+"px";
-
-heart.style.animationDuration=(6+Math.random()*6)+"s";
-
-hearts.appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},12000);
-
-},400);
-
-</script>
-
-</body>
- </html>
+    <canvas id="canvas"></canvas>
+
+    <div id="countdown-container">
+        <h2>Anticipating Something Wonderful...</h2>
+        <div class="timer">
+            <div class="time-box">
+                <span id="days">00</span>
+                <label>Days</label>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <label>Hours</label>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <label>Mins</label>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <label>Secs</label>
+            </div>
+        </div>
+    </div>
+
+    <div id="birthday-content">
+        <div class="club-header">Jaramogi Oginga Odinga University of Science and Technology</div>
+        <div class="club-header" style="color: var(--electric-blue); margin-bottom: 30px;">The President's Award - Kenya Club</div>
+        
+        <h1>Happy Birthday, <br><span>Grace Wonder Olik!</span> 💙</h1>
+
+        <div class="message-card">
+            <p><strong>To Our Exceptional Leader & Peer,</strong></p>
+            <p>On this special day, July 2nd, the entire JOOUST President's Award Kenya family stands together to celebrate an incredibly vital pillar of our club. Grace, your name perfectly mirrors the essence of who you are—a true <em>Wonder</em> to everyone fortunate enough to work alongside you.</p>
+            <p>As a deeply committed member of the President's Award, your resilience, unmatched diligence, and unwavering dedication inspire all of us. You approach every challenge with rare strength and lead by beautiful example. Beyond your brilliant leadership, your genuine kindness warms our team, and your gorgeous grace lights up every single room you step into.</p>
+            <p>Thank you for your outstanding service, your bright spirit, and for always pushing the boundaries of what we can achieve together. We wish you an exceptional year filled with beautiful new horizons, grand adventures, and endless joy!</p>
+            <p style="text-align: right; font-weight: bold; color: var(--gold); margin-top: 20px;">— With Pride & Warmest Wishes,<br>JOOUST President's Award Kenya Club</p>
+        </div>
+
+        <h2 style="font-size: 1.5rem; margin-top: 40px;">📸 Moments of Excellence & Leadership</h2>
+        
+        <div class="gallery-container">
+            <div class="slider" id="slider">
+                <div class="slide"><img src="1000854514.jpg" alt="Grace Beautiful Blue Dress"></div>
+                <div class="slide"><img src="1000854511.jpg" alt="Grace Casual Walk"></div>
+                <div class="slide"><img src="1000854504.jpg" alt="Grace Gorgeous Portrait"></div>
+                <div class="slide"><img src="1000836732.jpg" alt="JOOUST President's Award Field Outing"></div>
+                <div class="slide"><img src="1000836676.jpg" alt="JOOUST Club Administration Block Group"></div>
+                <div class="slide"><img src="1000836660.jpg" alt="JOOUST President's Award Team Group"></div>
+                <div class="slide"><img src="1000820763.jpg" alt="Community Service Cleaning Drive Team"></div>
+                <div class="slide"><img src="1000820831.jpg" alt="Grace Community Service Initiative"></div>
+                <div class="slide">
+                    <video controls muted loop>
+                        <source src="1000820875.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+            <a class="next" onclick="moveSlide(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <script>
+        // TARGET DATE: July 2nd, 2026 00:00:00
+        const targetDate = new Date("July 2, 2026 00:00:00").getTime();
+
+        const countdownInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+            if (difference <= 0) {
+                clearInterval(countdownInterval);
+                unlockBirthdayPage();
+            }
+        }, 1000);
+
+        function unlockBirthdayPage() {
+            document.getElementById("countdown-container").style.display = "none";
+            const content = document.getElementById("birthday-content");
+            content.style.display = "block";
+            setTimeout(() => { content.style.opacity = "1"; }, 100);
+            initCanvas();
+        }
+
+        // --- SLIDER LOGIC ---
+        let slideIndex = 0;
+        function moveSlide(n) {
+            const slides = document.getElementsByClassName("slide");
+            slideIndex += n;
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+            if (slideIndex < 0) { slideIndex = slides.length - 1; }
+            document.getElementById("slider").style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+
+        // --- BALLOON & COLOR BLAST CANVAS ENGINE ---
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let balloons = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor(x, y, color) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.radius = Math.random() * 3 + 2;
+                this.speedX = (Math.random() - 0.5) * 8;
+                this.speedY = (Math.random() - 0.5) * 8;
+                this.alpha = 1;
+                this.decay = Math.random() * 0.015 + 0.005;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.alpha -= this.decay;
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius,
+ 
