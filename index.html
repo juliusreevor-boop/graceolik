@@ -1,257 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOOUST President's Award - Happy Birthday Grace!</title>
-    <style>
-        :root {
-            --deep-royal: #051329;
-            --electric-sapphire: #007BFF;
-            --cyan-glow: #00E5FF;
-            --gold-accent: #FFD700;
-            --pure-white: #FFFFFF;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Wonder 🎉</title>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
 
-        body {
-            background-color: var(--deep-royal);
-            color: var(--pure-white);
-            font-family: 'Montserrat', 'Segoe UI', Helvetica, Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow-x: hidden;
-        }
+body{
+    background:linear-gradient(135deg,#0f172a,#2563eb,#38bdf8);
+    color:white;
+    overflow:hidden;
+}
 
-        /* --- COUNTDOWN GATEWAY --- */
-        #countdown-screen {
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at center, #0c2346 0%, var(--deep-royal) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            padding: 20px;
-            text-align: center;
-        }
+.container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    padding:20px;
+}
 
-        .branding-sub {
-            color: var(--gold-accent);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
+h1{
+    font-size:4rem;
+    animation:glow 2s infinite alternate;
+}
 
-        #countdown-screen h2 {
-            font-size: 2rem;
-            font-weight: 300;
-            margin-bottom: 40px;
-            letter-spacing: 1px;
-        }
+h2{
+    margin-top:15px;
+    font-size:2rem;
+}
 
-        .grid-timer {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 500px;
-            width: 100%;
-        }
+p{
+    margin-top:20px;
+    max-width:800px;
+    line-height:1.8;
+    font-size:1.2rem;
+}
 
-        .metric-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(0, 229, 255, 0.2);
-            padding: 20px 10px;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        }
+button{
+    margin-top:35px;
+    padding:15px 35px;
+    font-size:18px;
+    border:none;
+    border-radius:40px;
+    background:white;
+    color:#2563eb;
+    cursor:pointer;
+    transition:.3s;
+}
 
-        .metric-card slot {
-            display: block;
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--cyan-glow);
-            text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
-        }
+button:hover{
+    transform:scale(1.08);
+}
 
-        .metric-card label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: rgba(255, 255, 255, 0.6);
-            margin-top: 5px;
-            display: block;
-        }
+#message{
+    display:none;
+    margin-top:30px;
+    font-size:1.3rem;
+}
 
-        /* --- MAIN BIRTHDAY HUB --- */
-        #main-celebration-hub {
-            display: none;
-            width: 100%;
-            max-width: 1100px;
-            padding: 40px 20px;
-            opacity: 0;
-            transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 10;
-        }
+@keyframes glow{
+from{
+text-shadow:0 0 10px white;
+}
+to{
+text-shadow:0 0 30px cyan,0 0 50px white;
+}
+}
 
-        .layout-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 40px;
-            align-items: center;
-        }
+.confetti{
+    position:absolute;
+    width:10px;
+    height:10px;
+    animation:fall linear infinite;
+}
 
-        @media (max-width: 900px) {
-            .layout-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+@keyframes fall{
+0%{
+transform:translateY(-100vh) rotate(0deg);
+opacity:1;
+}
+100%{
+transform:translateY(100vh) rotate(720deg);
+opacity:0;
+}
+}
+</style>
+</head>
 
-        /* Message Formatting */
-        .showcase-header {
-            text-align: left;
-            margin-bottom: 25px;
-        }
+<body>
 
-        .showcase-header h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.1;
-        }
+<div class="container">
 
-        .showcase-header h1 span {
-            color: var(--cyan-glow);
-            text-shadow: 0 0 20px rgba(0, 225, 255, 0.3);
-        }
+<h1>🎉 Happy Birthday Wonder! 🎂</h1>
 
-        .letter-container {
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 24px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(16px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-            text-align: left;
-            position: relative;
-            overflow: hidden;
-        }
+<h2>May your day be as wonderful as your name.</h2>
 
-        .letter-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--cyan-glow), var(--electric-sapphire));
-        }
+<p>
+Today is all about celebrating you.
+May this new chapter bring endless happiness,
+good health, unforgettable adventures,
+dreams fulfilled, and countless beautiful memories.
+Keep smiling, keep shining, and never stop being the amazing person you are.
+You deserve every joy life has to offer.
+Happy Birthday once again, Wonder! 💙
+</p>
 
-        .letter-container p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 300;
-        }
+<button onclick="showWish()">Open Your Birthday Surprise 🎁</button>
 
-        .letter-container p strong {
-            color: var(--pure-white);
-            font-weight: 600;
-        }
+<div id="message">
+❤️ Wishing you laughter, success, love, peace and countless blessings today and always.<br><br>
+🎂 Happy Birthday Wonder! 🎉
+</div>
 
-        .signature-block {
-            margin-top: 35px;
-            text-align: right;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-        }
+</div>
 
-        .signature-title {
-            color: var(--gold-accent);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
+<script>
+function showWish(){
+document.getElementById("message").style.display="block";
+launchConfetti();
+}
 
-        .signature-sub {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.5);
-            letter-spacing: 1px;
-            margin-top: 3px;
-        }
+function launchConfetti(){
 
-        /* --- PREMIUM THEATER SLIDER --- */
-        .theater-wrapper {
-            position: relative;
-            background: #020813;
-            border-radius: 24px;
-            padding: 15px;
-            border: 1px solid rgba(0, 229, 255, 0.25);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-        }
+for(let i=0;i<180;i++){
 
-        .theater-viewport {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            overflow: hidden;
-            border-radius: 16px;
-        }
+let c=document.createElement("div");
+c.classList.add("confetti");
 
-        .theater-strip {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+c.style.left=Math.random()*100+"vw";
+c.style.animationDuration=(Math.random()*3+2)+"s";
+c.style.background=`hsl(${Math.random()*360},100%,60%)`;
 
-        .theater-cell {
-            min-width: 100%;
-            height: 100%;
-            background: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+document.body.appendChild(c);
 
-        .theater-cell img, .theater-cell video {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+setTimeout(()=>{
+c.remove();
+},5000);
 
-        /* Navigation Arrows */
-        .action-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background: rgba(5, 19, 41, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: var(--cyan-glow);
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(8px);
-            z-index: 50;
-        }
+}
+}
+</script>
 
-        .action-arrow:hover {
-            background: var(--cyan-glow);
-            color
-        
+</body>
+</html>
